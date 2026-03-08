@@ -3,99 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GamesBR - Notícias do Brasil</title>
+<meta name="description" content="Games, esports e cultura gamer no Brasil">
+<title>GamesBR - Games, esports e cultura gamer no Brasil</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family: 'Georgia', serif; background: #f5f5f5; color: #222; }
-header { background: #4a235a; color: white; padding: 20px 0; text-align: center; }
-header h1 { font-size: 2.5em; letter-spacing: 2px; }
-header p { font-size: 0.9em; opacity: 0.8; margin-top: 5px; }
-nav { background: rgba(0,0,0,0.2); padding: 10px 0; text-align: center; }
-nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; }
-.banner { background: #222; text-align: center; padding: 10px; }
-.banner img { max-width: 728px; width: 100%; }
-.container { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
-.main-news article { background: white; margin-bottom: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.main-news article img { width: 100%; height: 220px; object-fit: cover; background: #4a235a; display: flex; align-items: center; justify-content: center; }
-.main-news article .content { padding: 20px; }
-.main-news article h2 { font-size: 1.3em; margin-bottom: 10px; color: #1a1a1a; }
-.main-news article h2 a { text-decoration: none; color: inherit; }
-.main-news article h2 a:hover { color: #4a235a; }
-.main-news article p { color: #666; line-height: 1.6; font-size: 0.95em; }
-.tag { background: #4a235a; color: white; padding: 3px 10px; border-radius: 20px; font-size: 0.75em; text-transform: uppercase; display: inline-block; margin-bottom: 10px; }
-.sidebar { }
-.sidebar-banner { background: white; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.sidebar .widget { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-.sidebar .widget h3 { font-size: 1em; text-transform: uppercase; letter-spacing: 1px; color: #4a235a; border-bottom: 2px solid #4a235a; padding-bottom: 10px; margin-bottom: 15px; }
-.sidebar .widget ul { list-style: none; }
-.sidebar .widget ul li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9em; }
-.sidebar .widget ul li a { text-decoration: none; color: #333; }
-footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 30px; margin-top: 40px; font-size: 0.85em; }
-@media(max-width:768px) { .container { grid-template-columns: 1fr; } }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Georgia',serif;background:#f4f4f4;color:#222;}
+header{background:#1a1a2e;color:white;padding:20px 0;text-align:center;}
+header h1{font-size:2.5em;letter-spacing:2px;}
+header p{font-size:0.95em;opacity:0.85;margin-top:6px;}
+nav{background:rgba(0,0,0,0.25);padding:10px 0;text-align:center;}
+nav a{color:white;text-decoration:none;margin:0 15px;font-size:0.9em;text-transform:uppercase;letter-spacing:1px;transition:opacity 0.2s;}
+nav a:hover{opacity:0.7;}
+.breaking{background:#e74c3c;color:white;padding:8px 20px;text-align:center;font-size:0.85em;font-weight:bold;}
+.container{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:2fr 1fr;gap:30px;}
+.main-news article{background:white;margin-bottom:25px;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.1);transition:transform 0.2s;}
+.main-news article:hover{transform:translateY(-3px);}
+.main-news article img{width:100%;height:240px;object-fit:cover;}
+.main-news article .content{padding:22px;}
+.main-news article h2{font-size:1.35em;margin-bottom:12px;color:#1a1a1a;line-height:1.4;}
+.main-news article h2 a{text-decoration:none;color:inherit;}
+.main-news article h2 a:hover{color:#1a1a2e;}
+.main-news article p{color:#666;line-height:1.7;font-size:0.95em;margin-bottom:12px;}
+.tag{color:white;padding:4px 12px;border-radius:20px;font-size:0.75em;text-transform:uppercase;display:inline-block;margin-bottom:12px;font-weight:bold;}
+.leia-mais{font-size:0.9em;font-weight:bold;text-decoration:none;}
+.sidebar .widget{background:white;border-radius:10px;padding:22px;margin-bottom:22px;box-shadow:0 3px 12px rgba(0,0,0,0.1);}
+.sidebar .widget h3{font-size:0.9em;text-transform:uppercase;letter-spacing:1px;color:#1a1a2e;border-bottom:3px solid #1a1a2e;padding-bottom:10px;margin-bottom:15px;}
+.sidebar .widget ul{list-style:none;}
+.sidebar .widget ul li{padding:9px 0;border-bottom:1px solid #eee;font-size:0.9em;}
+.sidebar .widget ul li:last-child{border-bottom:none;}
+.sidebar .widget ul li a{text-decoration:none;color:#333;line-height:1.4;display:block;}
+.sidebar .widget ul li a:hover{color:#1a1a2e;}
+.date-badge{color:#999;font-size:0.8em;margin-bottom:8px;}
+footer{background:#1a1a1a;color:#999;text-align:center;padding:30px;margin-top:40px;font-size:0.85em;}
+footer a{color:#ccc;text-decoration:none;}
+@media(max-width:768px){.container{grid-template-columns:1fr;}.main-news article img{height:200px;}header h1{font-size:1.8em;}}
 </style>
 </head>
 <body>
 <header>
   <h1>🎮 GamesBR</h1>
-  <p>As melhores notícias sobre Games e E-sports</p>
+  <p>Games, esports e cultura gamer no Brasil</p>
 </header>
 <nav>
   <a href="/">Início</a>
   <a href="#">Últimas</a>
   <a href="#">Mais Lidas</a>
+  <a href="#">Vídeos</a>
   <a href="#">Contato</a>
 </nav>
-<div class="banner">
-  <a href="#"><img src="https://via.placeholder.com/728x90/333/fff?text=Publicidade" alt="Banner"></a>
-</div>
+<div class="breaking">🔴 AO VIVO: Acompanhe as últimas notícias em tempo real</div>
 <div class="container">
   <div class="main-news">
+    
     <article>
-      <div style="background:#4a235a;height:220px;display:flex;align-items:center;justify-content:center;color:white;font-size:3em">🎮</div>
+      <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80" alt="GTA VI: novo trailer confirma ambientação parcial no Rio de Janeiro e São Paulo" loading="lazy" onerror="this.style.background='#1a1a2e';this.style.height='220px'">
       <div class="content">
-        <span class="tag">Destaque</span>
-        <h2><a href="noticia-1.html">Grande novidade no mundo de Games e E-sports surpreende especialistas</a></h2>
-        <p>Os últimos acontecimentos no setor de Games e E-sports estão movimentando todo o Brasil. Especialistas analisam o cenário atual e apontam as principais tendências para os próximos meses. Confira tudo que está acontecendo.</p>
+        <span class="tag" style="background:#1a1a2e">Lançamentos</span>
+        <h2><a href="artigo-1.html">GTA VI: novo trailer confirma ambientação parcial no Rio de Janeiro e São Paulo</a></h2>
+        <p>A Rockstar Games lançou o terceiro trailer de GTA VI e confirmou que além de Vice City, o jogo terá missões e sequências ambientadas em cidades claramente inspiradas no Brasil, com favelas, carnaval e...</p>
+        <a href="artigo-1.html" class="leia-mais" style="color:#1a1a2e">Leia mais →</a>
       </div>
     </article>
     <article>
-      <div style="background:#4a235a;height:220px;display:flex;align-items:center;justify-content:center;color:white;font-size:3em">🎮</div>
+      <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" alt="FURIA vence IEM Katowice 2026 e conquista primeiro título internacional do CS2" loading="lazy" onerror="this.style.background='#1a1a2e';this.style.height='220px'">
       <div class="content">
-        <span class="tag">Brasil</span>
-        <h2><a href="noticia-2.html">Brasil se destaca em Games e E-sports com resultados históricos</a></h2>
-        <p>O Brasil continua a mostrar seu potencial no setor de Games e E-sports. Com novos investimentos e parcerias estratégicas, o país avança em direção a conquistas inéditas que prometem impactar positivamente a vida de milhões de brasileiros.</p>
+        <span class="tag" style="background:#1a1a2e">Esports</span>
+        <h2><a href="artigo-2.html">FURIA vence IEM Katowice 2026 e conquista primeiro título internacional do CS2</a></h2>
+        <p>Em uma final eletrizante contra a Natus Vincere, o time brasileiro de Counter-Strike 2 conquistou o maior torneio de CS da temporada. A vitória garante US$ 500 mil e 1.250 pontos no ranking mundial....</p>
+        <a href="artigo-2.html" class="leia-mais" style="color:#1a1a2e">Leia mais →</a>
       </div>
     </article>
     <article>
-      <div style="background:#4a235a;height:220px;display:flex;align-items:center;justify-content:center;color:white;font-size:3em">🎮</div>
+      <img src="https://images.unsplash.com/photo-1607853202273-232359e82370?w=800&q=80" alt="Nintendo Switch 2 chega ao Brasil em junho por R$ 3.499 — veja os jogos de lançamento" loading="lazy" onerror="this.style.background='#1a1a2e';this.style.height='220px'">
       <div class="content">
-        <span class="tag">Exclusivo</span>
-        <h2><a href="noticia-3.html">Entenda o impacto das mudanças em Games e E-sports no dia a dia</a></h2>
-        <p>As transformações no mercado de Games e E-sports chegam com força ao cotidiano do brasileiro. Nossa equipe ouviu especialistas e trouxe uma análise completa sobre o que mudou e o que ainda está por vir neste setor tão importante.</p>
+        <span class="tag" style="background:#1a1a2e">Hardware</span>
+        <h2><a href="artigo-3.html">Nintendo Switch 2 chega ao Brasil em junho por R$ 3.499 — veja os jogos de lançamento</a></h2>
+        <p>A Nintendo confirmou o lançamento do Switch 2 no Brasil para junho de 2026, com preço sugerido de R$ 3.499. Os jogos de lançamento incluem Mario Kart World, Donkey Kong Bananza e Zelda: Echoes of Wisd...</p>
+        <a href="artigo-3.html" class="leia-mais" style="color:#1a1a2e">Leia mais →</a>
+      </div>
+    </article>
+    <article>
+      <img src="https://images.unsplash.com/photo-1560419015-7c427e8ae5ba?w=800&q=80" alt="Free Fire Legends: nova temporada com mapa brasileiro chega em abril" loading="lazy" onerror="this.style.background='#1a1a2e';this.style.height='220px'">
+      <div class="content">
+        <span class="tag" style="background:#1a1a2e">Mobile</span>
+        <h2><a href="artigo-4.html">Free Fire Legends: nova temporada com mapa brasileiro chega em abril</a></h2>
+        <p>A Garena anunciou a temporada mais brasileira da história do Free Fire. O novo mapa 'Favela do Futuro' foi desenvolvido em parceria com artistas cariocas e tem trilha sonora de funk com artistas nacio...</p>
+        <a href="artigo-4.html" class="leia-mais" style="color:#1a1a2e">Leia mais →</a>
+      </div>
+    </article>
+    <article>
+      <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=800&q=80" alt="Brasil Gaming Show 2026 anuncia edição presencial com 300 jogos em exposição" loading="lazy" onerror="this.style.background='#1a1a2e';this.style.height='220px'">
+      <div class="content">
+        <span class="tag" style="background:#1a1a2e">Eventos</span>
+        <h2><a href="artigo-5.html">Brasil Gaming Show 2026 anuncia edição presencial com 300 jogos em exposição</a></h2>
+        <p>A maior feira de games da América Latina volta ao Expo Center Norte com edição histórica. Três dias de evento com torneios, cosplay, painéis com desenvolvedores e mais de 300 títulos para jogar antes ...</p>
+        <a href="artigo-5.html" class="leia-mais" style="color:#1a1a2e">Leia mais →</a>
       </div>
     </article>
   </div>
   <div class="sidebar">
-    <div class="sidebar-banner">
-      <a href="#"><img src="https://via.placeholder.com/300x250/444/fff?text=Anuncio" alt="Anúncio" style="width:100%;border-radius:4px"></a>
-    </div>
     <div class="widget">
-      <h3>Mais Lidas</h3>
+      <h3>📰 Mais Lidas</h3>
       <ul>
-        <li><a href="#">🎮 Notícia em destaque sobre Games e E-sports</a></li>
-        <li><a href="#">🎮 Últimas atualizações do setor</a></li>
-        <li><a href="#">🎮 Análise especial dos experts</a></li>
-        <li><a href="#">🎮 O futuro de Games e E-sports no Brasil</a></li>
-        <li><a href="#">🎮 Tendências para 2026</a></li>
+        <li><a href="artigo-1.html">🎮 GTA VI: novo trailer confirma ambientação parcial no Rio de ...</a></li>
+<li><a href="artigo-2.html">🎮 FURIA vence IEM Katowice 2026 e conquista primeiro título in...</a></li>
+<li><a href="artigo-3.html">🎮 Nintendo Switch 2 chega ao Brasil em junho por R$ 3.499 — ve...</a></li>
+<li><a href="artigo-4.html">🎮 Free Fire Legends: nova temporada com mapa brasileiro chega ...</a></li>
+<li><a href="artigo-5.html">🎮 Brasil Gaming Show 2026 anuncia edição presencial com 300 jo...</a></li>
+
       </ul>
     </div>
-    <div class="sidebar-banner">
-      <a href="#"><img src="https://via.placeholder.com/160x600/555/fff?text=Ad" alt="Anúncio" style="width:100%;border-radius:4px"></a>
+    <div class="widget">
+      <h3>📅 Publicado em</h3>
+      <p style="font-size:0.9em;color:#666;">Domingo, 8 de março de 2026 · Atualizado às 08:00</p>
+    </div>
+    <div class="widget">
+      <h3>📬 Newsletter</h3>
+      <p style="font-size:0.85em;color:#666;margin-bottom:12px;">Receba as melhores notícias direto no seu email</p>
+      <input type="email" placeholder="seu@email.com" style="width:100%;padding:8px;border:1px solid #ddd;border-radius:5px;font-size:0.9em;margin-bottom:8px;">
+      <button style="width:100%;padding:8px;background:#1a1a2e;color:white;border:none;border-radius:5px;cursor:pointer;font-weight:bold;">Assinar grátis</button>
     </div>
   </div>
 </div>
 <footer>
-  <p>&copy; 2026 GamesBR. Todos os direitos reservados. | Política de Privacidade | Contato</p>
+  <p>&copy; 2026 GamesBR. Todos os direitos reservados. | <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a> | <a href="#">Contato</a></p>
 </footer>
 </body>
 </html>
